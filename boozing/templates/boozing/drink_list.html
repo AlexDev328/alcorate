@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Мой список</title>
+</head>
+<body>
+    {% for drink in drinks %}
+        <div>
+            <p>{{ drink.name }}</p>
+            <p>{{ drink.alcohole }}</p>
+            <p>{{ drink.volume }}</p>
+            <p>{{ drink.drink_type.name }}</p>
+        </div>
+    {% endfor %}
+</body>
+</html>
