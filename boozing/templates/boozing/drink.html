@@ -1,12 +1,11 @@
-{% extends 'boozing/drink.html' %}
+{% extends 'boozing/base.html' %}
 
 {% block content %}
 
-    {% for drink in drinks %}
-        <div class="alco_card">
+    <div class="alco_card">
             <div class="alco_card_line">
                 <div>
-                    <a href="{% url 'drink' pk=drink.id %}">{{ drink.name }}</a>
+                    {{ drink.name }}
                 </div>
                 <div>{{ drink.drink_type.name }}</div>
             </div>
@@ -17,6 +16,8 @@
                 <div>{{ drink.raiting }}</div>
             </div>
         </div>
-    {% endfor %}
 
 {% endblock %}
+
+
+

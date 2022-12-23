@@ -49,6 +49,8 @@ class Degustation(models.Model):
     drink = models.ForeignKey(Drink, on_delete=models.DO_NOTHING)
     like = models.BooleanField('Понравилось')
 
+    def __str__(self):
+        return self.drink, self.data
 
     class Meta:
         verbose_name = 'Дегустация'
@@ -59,6 +61,9 @@ class Purchase(models.Model):
     price = models.DecimalField('Цена',max_digits=4, decimal_places=2)
     drink = models.ForeignKey(Drink, on_delete=models.DO_NOTHING, related_name='purchases')
     shop = models.ForeignKey(Shop, on_delete=models.DO_NOTHING)
+
+    def __str__(self):
+        return self.drink.name, self.shop, self.price
 
     class Meta:
         verbose_name = 'Покупка'

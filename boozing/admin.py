@@ -7,7 +7,7 @@ from .models import Drink, DrinkType, Shop, Purchase, Degustation
 @admin.register(Drink)
 class DrinkAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'alcohole', 'volume','avg_price','raiting')
-    fields = ( 'name', 'alcohole', 'volume','avg_price','raiting')
+    fields = ( 'name', 'alcohole', 'volume','avg_price','raiting','drink_type')
     readonly_fields = ('avg_price','raiting')
 
 
