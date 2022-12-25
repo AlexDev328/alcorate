@@ -1,21 +1,26 @@
 {% extends 'boozing/base.html' %}
-
+{% load static %}
 {% block content %}
 
-    <div class="alco_card">
-            <div class="alco_card_line">
-                <div>
-                    {{ drink.name }}
-                </div>
-                <div>{{ drink.drink_type.name }}</div>
-            </div>
-            <div class="alco_card_line">
-                <div>{{ drink.alcohole }}</div>
-                <div>{{ drink.volume }}</div>
-                <div>{{ drink.avg_price }}</div>
-                <div>{{ drink.raiting }}</div>
-            </div>
-        </div>
+
+  <div class="alco_card">
+    <div class="alco_card_column_pic">
+
+    </div>
+
+    <div class="alco_card_column_info">
+      <div class="alco_card_line half_height">
+        <div>{{ drink.name }}</div>
+        <div>{{ drink.drink_type.name }}</div>
+      </div>
+      <div class="alco_card_line half_height center-items">
+        <div>{{ drink.alcohole }}%</div>
+        <div>{{ drink.volume }} л</div>
+        <div>₾{{ drink.avg_price }}</div>
+        <div>{{ drink.raiting }}/5</div>
+      </div>
+    </div>
+  </div>
 
 {% endblock %}
 

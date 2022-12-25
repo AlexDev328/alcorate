@@ -9,3 +9,9 @@ def drink(request, pk):
 
     drink = Drink.objects.get(pk=pk)
     return render(request, 'boozing/drink.html', {'drink': drink})
+
+
+
+
+def test(request):
+    return render(request, 'boozing/raiting.html')
