@@ -1,0 +1,16 @@
+{% extends 'boozing/drink.html' %}
+
+{% block content %}
+
+    {% for drink_type in object_list %}
+        <div class="alco_card">
+            <div class="alco_card_line">
+                <div>
+                    {{ drink_type.name }}
+                </div>
+                <div>{{ drink_type.drink_type.name }}</div>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}
