@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .models import Drink, DrinkType
-from .forms import DrinkForm, DrinkTypeForm
+from .forms import DrinkForm, DrinkTypeForm, DegustationForm, PurchaseForm
 from django.views.generic import ListView, DetailView
 
 def drink_list(request):
@@ -28,10 +28,28 @@ def create_drink_type(request):
     if request.method == 'POST':
         drink_type_form = DrinkTypeForm(request.POST)
         drink_type = drink_type_form.save()
-        return HttpResponse(content='ok', status_code=201)
+        return HttpResponse(content='Тип напитка добавлен', status=201)
     else:
         forms = DrinkTypeForm()
         return render(request, 'boozing/create_drink.html', {'form': forms})
+
+def create_degustation(request):
+    if request.method == 'POST':
+        degustation_form = DegustationForm(request.POST)
+        degustation = degustation_form.save()
+        return HttpResponse(content='Дегустация добавлена ', status=201)
+    else:
+        forms = DegustationForm()
+        return render(request, 'boozing/create_degustation.html', {'form': forms})
+
+def create_purchase(request):
+    if request.method == 'POST':
+        purchase_form = PurchaseForm(request.POST)
+        purchase = purchase_form.save()
+        return HttpResponse(content='Покупка добавлена', status=201)
+    else:
+        forms = PurchaseForm()
+        return render(request, 'boozing/create_purchase.html', {'form': forms})
 
 
 class DrinkTypeTView(ListView):
@@ -49,6 +67,9 @@ class DrinkTypeDetailTView(DetailView):
 
 def test(request):
     return render(request, 'boozing/raiting.html')
+
+
+
 
 
 
