@@ -1,0 +1,57 @@
+.main_container {
+  margin: 10px 20px;
+}
+
+.alco_card {
+  display: flex;
+  border-radius: 20px;
+
+  border: 7px outset #3739ab;
+  min-height: 100px;
+  min-width: 300px;
+  max-width: 500px;
+  padding: 16px;
+  margin: auto;
+}
+.alco_card_column_pic {
+  width: 100px;
+}
+.alco_card_column_info {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 100px);
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.alco_card_line {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stroke_bottom {
+  border-bottom: 1px solid black;
+}
+
+.half_height {
+  height: 50%;
+}
+
+.center-items {
+  align-items: center;
+}
+
+.alco_card_line_field {
+  width: 50%
+
+}
+
+
+.alco_card_line_field_gr {
+
+}
+
+
+.large {
+  font-size: 30px;
+}

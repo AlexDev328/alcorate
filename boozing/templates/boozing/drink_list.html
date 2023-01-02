@@ -2,21 +2,27 @@
 
 {% block content %}
 
-    {% for drink in drinks %}
-        <div class="alco_card">
-            <div class="alco_card_line">
-                <div>
-                    <a href="{% url 'drink' pk=drink.id %}">{{ drink.name }}</a>
-                </div>
-                <div>{{ drink.drink_type.name }}</div>
-            </div>
-            <div class="alco_card_line">
-                <div>{{ drink.alcohole }}</div>
-                <div>{{ drink.volume }}</div>
-                <div>{{ drink.avg_price }}</div>
-                <div>{{ drink.raiting }}</div>
-            </div>
+  {% for drink in drinks %}
+    <div class="alco_card">
+      <div class="alco_card_column_pic">
+
+      </div>
+
+      <div class="alco_card_column_info">
+        <div class="alco_card_line half_height stroke_bottom">
+          <div>
+            <a href="{% url 'drink' pk=drink.id %}">{{ drink.name }}</a>
+          </div>
+          <div>{{ drink.drink_type.name }}</div>
         </div>
-    {% endfor %}
+        <div class="alco_card_line half_height center-items">
+          <div>{{ drink.alcohole }}%</div>
+          <div>{{ drink.volume }} л</div>
+          <div>₾{{ drink.avg_price }}</div>
+          <div>{{ drink.raiting }}/5</div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
 
 {% endblock %}

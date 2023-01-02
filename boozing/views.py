@@ -13,7 +13,6 @@ def drink(request, pk):
     drink = Drink.objects.get(pk=pk)
     return render(request, 'boozing/drink.html', {'drink': drink})
 
-
 def create_drink(request):
     if request.method == 'POST':
         print(request.POST)
@@ -45,3 +44,11 @@ class DrinkTypeDetailTView(DetailView):
 
     def get_object(self, queryset=None):
         DrinkType.objects.get(pk=self.request.GET['pk'])
+
+
+
+def test(request):
+    return render(request, 'boozing/raiting.html')
+
+
+
